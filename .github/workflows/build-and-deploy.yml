@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   build-and-deploy:
-    name: Deploy to GitHub Pages
+    name: Build SvelteKit Page & Deploy to GitHub Pages
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
