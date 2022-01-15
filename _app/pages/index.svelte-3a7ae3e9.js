@@ -1,0 +1,1 @@
+import{S as o,i as r,s as c,t as i,h as l,g as u,K as s,d as m}from"../chunks/vendor-f0095a1c.js";function d(a){let t;return{c(){t=i("Pls answer me :-(")},l(e){t=l(e,"Pls answer me :-(")},m(e,n){u(e,t,n)},p:s,i:s,o:s,d(e){e&&m(t)}}}class p extends o{constructor(t){super();r(this,t,null,d,c,{})}}export{p as default};
