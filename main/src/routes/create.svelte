@@ -51,13 +51,13 @@
                 </div>
             {/if}
         </div>
-        {#if link}
-            <button type="submit" on:click|preventDefault={ jumbleLink }>
-                Jumble
-            </button>
-        {:else if jumbledLink}
+        {#if jumbledLink}
             <button type="submit" on:click|preventDefault={ () => jumbledLink = null }>
                 Unjumble
+            </button>
+        {:else if link}
+            <button type="submit" on:click|preventDefault={ jumbleLink }>
+                Jumble
             </button>
         {:else}
             <button type="submit" on:click|preventDefault={ getLink } disabled={ !name }>
