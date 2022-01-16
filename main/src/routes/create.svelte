@@ -128,6 +128,12 @@
         box-shadow: 1px 1px 2px rgba(0, 0, 0, .1) inset;
     }
 
+    @media (prefers-color-scheme: dark) {
+        input {
+            border: 2px solid rgba(255, 255, 255, .2);
+        }
+    }
+
     .copyOverlay {
         position: absolute;
         width: 100%;
@@ -145,6 +151,12 @@
     .copied {
         font-size: 0.8em;
         color: darkgreen;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .copied {
+            color: green;
+        }
     }
 
     button {

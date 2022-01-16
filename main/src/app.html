@@ -14,7 +14,17 @@
 				--red: #BA1200;
 				--text: #031927;
 				--special: #ECCE8E;
+				--select-text: var(--text);
 				--bg: #FFF;
+			}
+			@media (prefers-color-scheme: dark) {
+				html {
+					--red: #BA1200;
+					--text: #FFF;
+					--special: #ECCE8E;
+					--select-text: #031927;
+					--bg: #020a0f;
+				}
 			}
 			body {
 				background-color: var(--bg);
@@ -23,15 +33,19 @@
 				font-family: 'JosefinSans', sans-serif;
 				color: var(--text);
 			}
+			input {
+				color: var(--text);
+				background-color: var(--bg);
+			}
 			input::placeholder {
 				opacity: .8;
 			}
 			::selection {
-				color: var(--text);
+				color: var(--select-text);
 				background: var(--special);
 			}
 			::moz-selection {
-				color: var(--text);
+				color: var(--select-text);
 				background: var(--special);
 			}
 		</style>
