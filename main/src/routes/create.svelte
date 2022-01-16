@@ -52,7 +52,7 @@
             {/if}
         </div>
         {#if jumbledLink}
-            <button type="submit" on:click|preventDefault={ () => jumbledLink = null }>
+            <button type="submit" on:click|preventDefault={ () => { jumbledLink = null; clipboardWrite(link); } }>
                 Unjumble
             </button>
         {:else if link}
