@@ -74,7 +74,7 @@
 
     .main {
         position: absolute;
-        width: 61vw;
+        width: 62vw;
         top: 0;
         left: 0;
         right: 0;
