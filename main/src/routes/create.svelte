@@ -15,6 +15,7 @@
 
     let link = "";
     function getLink() {
+        if (!name) return;
         link = location.host + "#" + name;
         clipboardWrite(link);
     }
@@ -36,7 +37,7 @@
     <form>
         <!-- svelte-ignore a11y-autofocus -->
         <div class="text">
-            <input bind:value={ name } type="text" placeholder="Your friend's name..." maxlength={ 16 } autofocus>
+            <input bind:value={ name } type="text" placeholder="Your friend's name..." maxlength={ 16 } required autofocus>
             {#if link}
                 <div class="copyOverlay">
                     {#if jumbledLink}
@@ -54,8 +55,12 @@
             <button type="submit" on:click|preventDefault={ jumbleLink }>
                 Jumble
             </button>
+        {:else if jumbledLink}
+            <button type="submit" on:click|preventDefault={ () => jumbledLink = null }>
+                Unjumble
+            </button>
         {:else}
-            <button type="submit" on:click|preventDefault={ getLink }>
+            <button type="submit" on:click|preventDefault={ getLink } disabled={ !name }>
                 Get link
             </button>
         {/if}
@@ -152,10 +157,62 @@
         border: 1px solid rgba(0, 0, 0, .2);
         border-radius: 6px;
         box-shadow: 1px 1px 2px rgba(0, 0, 0, .1) inset;
+        transition: filter 300ms;
+    }
+
+    button:disabled {
+        filter: grayscale(.4);
+        opacity: .9;
     }
 
     input:focus, button:focus {
         outline: var(--special) auto 1px;
+    }
+
+    @media screen and (max-width: 770px) {
+        p {
+            font-size: 16px;
+        }
+        .copyOverlay {
+            font-size: 16px;
+        }
+        button {
+            font-size: 16px;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .main {
+            width: 90vw;
+            font-size: 16px;
+        }
+        h1 {
+            font-size: 3.6em;
+        }
+        form {
+            max-width: 350px;
+        }
+        .text {
+            width: 100%;
+        }
+        input {
+            font-size: 24px;
+        }
+        p {
+            max-width: 350px;
+            margin-top: 8px;
+            margin-bottom: 24px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        form {
+            flex-direction: column;
+        }
+        button {
+            width: 96px;
+            height: 42px;
+        }
     }
 
 </style>

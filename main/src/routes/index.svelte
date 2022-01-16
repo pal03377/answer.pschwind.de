@@ -8,9 +8,9 @@
     onMount(() => {
         if (location.hash || location.search) {
             let chosenEffect = AVAILABLE_EFFECTS[Math.floor(Math.random() * AVAILABLE_EFFECTS.length)];
-            goto(`/${ chosenEffect }${ location.hash }${ location.search }`);
+            goto(`/${ chosenEffect }${ location.hash }${ location.search }`, { replaceState: true });
         } else {
-            goto("/create");
+            goto("/create", { replaceState: true });
         }
     });
 
