@@ -16,7 +16,7 @@
     let link = "";
     function getLink() {
         if (!name) return;
-        link = location.host + "#" + name;
+        link = location.host + "#" + encodeURIComponent(name);
         clipboardWrite(link);
     }
     
