@@ -14,7 +14,17 @@
 				--red: #BA1200;
 				--text: #031927;
 				--special: #ECCE8E;
+				--select-text: var(--text);
 				--bg: #FFF;
+			}
+			@media (prefers-color-scheme: dark) {
+				html {
+					--red: #BA1200;
+					--text: #FFF;
+					--special: #ECCE8E;
+					--select-text: #031927;
+					--bg: #020a0f;
+				}
 			}
 			body {
 				background-color: var(--bg);
@@ -23,26 +33,30 @@
 				font-family: 'JosefinSans', sans-serif;
 				color: var(--text);
 			}
+			input {
+				color: var(--text);
+				background-color: var(--bg);
+			}
 			input::placeholder {
 				opacity: .8;
 			}
 			::selection {
-				color: var(--text);
+				color: var(--select-text);
 				background: var(--special);
 			}
 			::moz-selection {
-				color: var(--text);
+				color: var(--select-text);
 				background: var(--special);
 			}
 		</style>
 		
-	<link rel="modulepreload" href="/_app/start-f02ebc88.js">
+	<link rel="modulepreload" href="/_app/start-a6559c7b.js">
 	<link rel="modulepreload" href="/_app/chunks/vendor-7d42f422.js">
 	<link rel="modulepreload" href="/_app/chunks/singletons-4a680913.js">
 	<link rel="modulepreload" href="/_app/layout.svelte-c8f0b489.js">
 	<link rel="modulepreload" href="/_app/pages/index.svelte-eeda7567.js">
 			<script type="module">
-				import { start } from "/_app/start-f02ebc88.js";
+				import { start } from "/_app/start-a6559c7b.js";
 				start({
 					target: document.querySelector("#svelte"),
 					paths: {"base":"","assets":""},
