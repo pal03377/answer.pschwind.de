@@ -5,6 +5,36 @@
 		<meta name="description" content="" />
 		<link rel="icon" href="%svelte.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			@font-face {
+				font-family: "JosefinSans";
+				src: url("font/JosefinSans-VariableFont_wght.ttf");
+			}
+			html {
+				--red: #BA1200;
+				--text: #031927;
+				--special: #ECCE8E;
+				--bg: #FFF;
+			}
+			body {
+				background-color: var(--bg);
+			}
+			body, button, input::placeholder {
+				font-family: 'JosefinSans', sans-serif;
+				color: var(--text);
+			}
+			input::placeholder {
+				opacity: .8;
+			}
+			::selection {
+				color: var(--text);
+				background: var(--special);
+			}
+			::moz-selection {
+				color: var(--text);
+				background: var(--special);
+			}
+		</style>
 		%svelte.head%
 	</head>
 	<body>
