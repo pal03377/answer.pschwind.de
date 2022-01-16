@@ -37,7 +37,7 @@
     <form>
         <!-- svelte-ignore a11y-autofocus -->
         <div class="text">
-            <input bind:value={ name } type="text" placeholder="Your friend's name..." maxlength={ 16 } required autofocus>
+            <input bind:value={ name } type="text" placeholder="Your friend's name..." maxlength={ 32 } required autofocus>
             {#if link}
                 <div class="copyOverlay">
                     {#if jumbledLink}
